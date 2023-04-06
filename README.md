@@ -5,11 +5,13 @@
 ### Results
 ![gallery](https://github.com/tr3e/InterGen/blob/main/gallery.gif)
 
-### Person-to-person interaction
-![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif)
+
 
 ### Trajectory control
 ![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif)
+
+### Person-to-person generation
+![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif)
 
 ### Inbetweening
 ![inbetweening](https://github.com/tr3e/InterGen/blob/main/inbetweening.gif)
