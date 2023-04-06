@@ -17,7 +17,7 @@ Extensive experiments validate the effectiveness and generalizability of InterGe
 
 ### Methods
 
-![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.pdf)
+![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.png)
 
 
 ### Results
