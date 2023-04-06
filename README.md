@@ -15,12 +15,12 @@ We further introduce two novel regularization terms to encode spatial relations,
 Extensive experiments validate the effectiveness and generalizability of InterGen. Notably, it can generate more diverse and compelling two-person motions than previous methods and enables various downstream applications for human interactions.
 
 
-### Methods
+<!-- ### Methods
 
-![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.png)
+![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.png) -->
 
 
-### Results
+### Text-to-Interaction
 ![gallery](https://github.com/tr3e/InterGen/blob/main/gallery.gif)
 
 ### Applications
