@@ -2,10 +2,20 @@
 
 ## Code comming soon!
 
+### Results
+![gallery](https://github.com/tr3e/InterGen/blob/main/gallery.gif)
 
+### Person-to-person interaction
+![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif)
+
+### Trajectory control
+![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif)
+
+### Inbetweening
+![inbetweening](https://github.com/tr3e/InterGen/blob/main/inbetweening.gif)
 
 ## InterHuman Dataset
-![dataset](https://github.com/tr3e/InterGen/blob/main/interhuman.gif)
+![interhuman](https://github.com/tr3e/InterGen/blob/main/interhuman.gif)
 
 InterHuman is a comprehensive, large-scale 3D human interactive motion dataset encompassing a diverse range of 3D motions of two interactive people, each accompanied by natural language annotations.
 
