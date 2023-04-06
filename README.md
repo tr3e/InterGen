@@ -2,18 +2,36 @@
 
 ## Code comming soon!
 
+
+### Abstract
+
+We have recently seen tremendous progress in diffusion advances for generating realistic human motions. Yet, they largely disregard the rich multi-human interactions. 
+In this paper, we present InterGen, an effective diffusion-based approach that incorporates human-to-human interactions into the motion diffusion process, which enables layman users to customize high-quality two-person interaction motions, with only text guidance.
+We first contribute a multimodal dataset, named InterHuman. It consists of about 107M frames for diverse two-person interactions, with accurate skeletal motions and 16,756 natural language descriptions.
+For the algorithm side, we carefully tailor the motion diffusion model to our two-person interaction setting. 
+To handle the symmetry of human identities during interactions, we propose two cooperative transformer-based denoisers that explicitly share weights, with a mutual attention mechanism to further connect the two denoising processes.
+Then, we propose a novel representation for motion input in our interaction diffusion model, which explicitly formulates the global relations between the two performers in the world frame.
+We further introduce two novel regularization terms to encode spatial relations, equipped with a corresponding damping scheme during the training of our interaction diffusion model. 
+Extensive experiments validate the effectiveness and generalizability of InterGen. Notably, it can generate more diverse and compelling two-person motions than previous methods and enables various downstream applications for human interactions.
+
+
+### Methods
+
+![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.pdf)
+
+
 ### Results
 ![gallery](https://github.com/tr3e/InterGen/blob/main/gallery.gif)
 
+### Applications
 
-
-### Trajectory control
+#### Trajectory control
 ![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif)
 
-### Person-to-person generation
+#### Person-to-person generation
 ![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif)
 
-### Inbetweening
+#### Inbetweening
 ![inbetweening](https://github.com/tr3e/InterGen/blob/main/inbetweening.gif)
 
 ## InterHuman Dataset
