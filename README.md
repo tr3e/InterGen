@@ -5,7 +5,7 @@
 
 
 ## InterHuman Dataset
-![dataset](https://github.com/tr3e/InterGen/interhuman.gif)
+![dataset](https://github.com/tr3e/InterGen/blob/main/interhuman.gif)
 
 InterHuman is a comprehensive, large-scale 3D human interactive motion dataset encompassing a diverse range of 3D motions of two interactive people, each accompanied by natural language annotations.
 
