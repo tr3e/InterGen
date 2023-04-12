@@ -1,4 +1,4 @@
-# InterGen: Diffusion-based Multi-human Motion Generation under Complex Interactions
+# InterGen
 
 ## Code comming soon!
 
