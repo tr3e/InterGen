@@ -15,24 +15,24 @@ We further introduce two novel regularization terms to encode spatial relations,
 Extensive experiments validate the effectiveness and generalizability of InterGen. Notably, it can generate more diverse and compelling two-person motions than previous methods and enables various downstream applications for human interactions. -->
 
 
-<!-- ### Methods
+<!-- ### Methods -->
 
-![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.png) -->
+![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.png)
 
 
-### Text-to-Interaction
+<!-- ### Text-to-Interaction
 ![gallery](https://github.com/tr3e/InterGen/blob/main/gallery.gif)
 
 ### Applications
 
-#### Trajectory control
+#### Trajectory control -->
 ![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif)
 
-#### Person-to-person generation
+<!-- #### Person-to-person generation
 ![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif)
 
 #### Inbetweening
-![inbetweening](https://github.com/tr3e/InterGen/blob/main/inbetweening.gif)
+![inbetweening](https://github.com/tr3e/InterGen/blob/main/inbetweening.gif) -->
 
 ## InterHuman Dataset
 ![interhuman](https://github.com/tr3e/InterGen/blob/main/interhuman.gif)
