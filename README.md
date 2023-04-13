@@ -3,7 +3,7 @@
 This repository contains the official implementation for the paper: [InterGen: Diffusion-based Multi-human Motion Generation
 under Complex Interactions](https://arxiv.org/pdf/2304.05684). Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. Your generous star ⭐ means a lot to us if you find our work useful.<br>
 <p float="left">
-  <img src="./pipeline.png" width="900" />
+  <img src="./readme/pipeline.png" width="900" />
 </p>
 
 <!-- ![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.png) -->
@@ -34,8 +34,10 @@ Extensive experiments validate the effectiveness and generalizability of InterGe
 
 ### Applications
 
-
-![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif)
+<p float="left">
+  <img src="./readme/trajectorycontrol.gif" width="900" />
+</p>
+<!-- ![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif) -->
 
 <!-- #### Person-to-person generation
 ![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif)
@@ -49,7 +51,7 @@ Extensive experiments validate the effectiveness and generalizability of InterGe
 InterHuman is a comprehensive, large-scale 3D human interactive motion dataset encompassing a diverse range of 3D motions of two interactive people, each accompanied by natural language annotations.
 
 <p float="left">
-  <img src="./interhuman.gif" width="900" />
+  <img src="./readme/interhuman.gif" width="900" />
 </p>
 
 
