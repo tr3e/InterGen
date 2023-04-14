@@ -1,7 +1,8 @@
 # InterGen
 
 This repository contains the official implementation for the paper: [InterGen: Diffusion-based Multi-human Motion Generation
-under Complex Interactions](https://arxiv.org/pdf/2304.05684). Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. Your generous star ⭐ means a lot to us if you find our work useful.<br>
+under Complex Interactions](https://arxiv.org/pdf/2304.05684). Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. 
+<!-- Your generous star ⭐ means a lot to us if you find our work useful.<br> -->
 <p float="left">
   <img src="./readme/pipeline.png" width="900" />
 </p>
