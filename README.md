@@ -2,7 +2,7 @@
 
 This repository contains the official implementation for the paper: [InterGen: Diffusion-based Multi-human Motion Generation
 under Complex Interactions](https://arxiv.org/pdf/2304.05684). Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. 
-<!-- Your generous star ⭐ means a lot to us if you find our work useful.<br> -->
+
 <p float="left">
   <img src="./readme/pipeline.png" width="900" />
 </p>
@@ -57,7 +57,7 @@ InterHuman is a comprehensive, large-scale 3D human interactive motion dataset e
 
 
 
-It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. Due to privacy concerns of performers included in our dataset, we cannot share it publicly. You can request the dataset by emailing the first author or corresponding author for the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
+It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. Due to privacy concerns of performers included in our dataset, we cannot share it publicly. You can request the dataset by [filling in this form](https://forms.gle/CjMrUxwdz6iPcTxf7) for the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
 
 
 ## Code comming soon!
