@@ -1,0 +1,19 @@
+GENERAL:
+  EXP_NAME: IG-S-8
+  CHECKPOINT: ./checkpoints
+  LOG_DIR: ./log
+
+TRAIN:
+  LR: 1e-4
+  WEIGHT_DECAY: 0.00002
+  BATCH_SIZE: 22
+  EPOCH: 2000
+  STEP: 1000000
+  LOG_STEPS: 10
+  SAVE_STEPS: 20000
+  SAVE_EPOCH: 100
+  RESUME: #checkpoints/IG-S/8/model/epoch=99-step=17600.ckpt
+  NUM_WORKERS: 2
+  MODE: finetune
+  LAST_EPOCH: 0
+  LAST_ITER: 0

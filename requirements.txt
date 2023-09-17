@@ -1,0 +1,15 @@
+numpy~=1.23.3
+torch~=1.13.0
+tqdm~=4.65.0
+lightning==1.9.1
+scipy~=1.4.1
+matplotlib~=3.2.0
+pillow~=7.2.0
+clip~=1.0
+yacs~=0.1.8
+mmcv~=1.6.2
+opencv-python~=4.5.3.56
+tabulate~=0.8.9
+termcolor~=1.1.0
+pytorch3d~=0.6.1
+smplx~=0.1.28
