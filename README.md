@@ -1,35 +1,72 @@
 # InterGen
 
 This repository contains the official implementation for the paper: [InterGen: Diffusion-based Multi-human Motion Generation
-under Complex Interactions](https://arxiv.org/pdf/2304.05684). Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. 
+under Complex Interactions](https://tr3e.github.io/intergen-page/). Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. 
 
 <p float="left">
   <img src="./readme/pipeline.png" width="900" />
 </p>
 
-<!-- ![pipeline](https://github.com/tr3e/InterGen/blob/main/pipeline.png) -->
+
+## Getting started
+
+This code was tested on `Ubuntu 20.04.1 LTS` and requires:
+
+* Python 3.8
+* conda3 or miniconda3
+* CUDA capable GPU (one is enough)
+
+### 1. Setup environment
+
+```shell
+conda create --name intergen
+conda activate intergen
+pip install -r requirements.txt
+pip install git+https://github.com/openai/CLIP.git
+```
+
+### 2. Get data
+
+<details>
+  <summary><b>Text to Motion</b></summary>
+
+Download the data from [InterGen: Diffusion-based Multi-human Motion Generation
+under Complex Interactions](https://tr3e.github.io/intergen-page/). And put them to ./data/.
+
+#### Data Structure
+```sh
+<DATA-DIR>
+./annots                //Natural language annotations where each file consisting of three sentences.
+./motions               //Raw motion data standardized as SMPL which is similiar to AMASS
+./motions_processed     //Processed motion data with joint positions and rotations (6D representation) of SMPL 22 joints kinematic structure.
+./split                 //train-val-test split.
+```
+
+### 3. Run inference
+
+Modify config files ./configs/model.yaml and ./configs/infer.yaml and input files ./prompts.txt, and then run:
+
+```shell
+python tools/infer.py
+```
+The results will be rendered and put in ./results/
+
+### 4. Train
+
+Modify config files ./configs/model.yaml ./configs/datasets.yaml and ./configs/train.yaml, and then run:
+
+```shell
+python tools/train.py
+```
 
 
-<!-- ### Abstract
+### 5. Evaluation
 
-We have recently seen tremendous progress in diffusion advances for generating realistic human motions. Yet, they largely disregard the rich multi-human interactions. 
-In this paper, we present InterGen, an effective diffusion-based approach that incorporates human-to-human interactions into the motion diffusion process, which enables layman users to customize high-quality two-person interaction motions, with only text guidance.
-We first contribute a multimodal dataset, named InterHuman. It consists of about 107M frames for diverse two-person interactions, with accurate skeletal motions and 16,756 natural language descriptions.
-For the algorithm side, we carefully tailor the motion diffusion model to our two-person interaction setting. 
-To handle the symmetry of human identities during interactions, we propose two cooperative transformer-based denoisers that explicitly share weights, with a mutual attention mechanism to further connect the two denoising processes.
-Then, we propose a novel representation for motion input in our interaction diffusion model, which explicitly formulates the global relations between the two performers in the world frame.
-We further introduce two novel regularization terms to encode spatial relations, equipped with a corresponding damping scheme during the training of our interaction diffusion model. 
-Extensive experiments validate the effectiveness and generalizability of InterGen. Notably, it can generate more diverse and compelling two-person motions than previous methods and enables various downstream applications for human interactions. -->
+Modify config files ./configs/model.yaml and ./configs/datasets.yaml, and then run:
 
-
-<!-- ### Methods -->
-
-
-
-<!-- ### Text-to-Interaction
-![gallery](https://github.com/tr3e/InterGen/blob/main/gallery.gif)
-
-
+```shell
+python tools/eval.py
+```
 
 #### Trajectory control -->
 
