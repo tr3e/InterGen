@@ -44,7 +44,7 @@ Download the data from [webpage](https://tr3e.github.io/intergen-page/). And put
 ```
 </details>
 
-### 3. Run inference
+## Run inference
 
 Modify config files ./configs/model.yaml and ./configs/infer.yaml and input files ./prompts.txt, and then run:
 
@@ -53,7 +53,7 @@ python tools/infer.py
 ```
 The results will be rendered and put in ./results/
 
-### 4. Train
+## Train
 
 Modify config files ./configs/model.yaml ./configs/datasets.yaml and ./configs/train.yaml, and then run:
 
@@ -62,7 +62,7 @@ python tools/train.py
 ```
 
 
-### 5. Evaluation
+## Evaluation
 
 Modify config files ./configs/model.yaml and ./configs/datasets.yaml, and then run:
 
