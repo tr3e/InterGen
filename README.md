@@ -29,8 +29,6 @@ pip install git+https://github.com/openai/CLIP.git
 
 ### 2. Get data
 
-<details>
-  <summary><b>Text to Motion</b></summary>
 
 Download the data from [webpage](https://tr3e.github.io/intergen-page/). And put them into ./data/.
 
@@ -42,16 +40,45 @@ Download the data from [webpage](https://tr3e.github.io/intergen-page/). And put
 ./motions_processed     //Processed motion data with joint positions and rotations (6D representation) of SMPL 22 joints kinematic structure.
 ./split                 //Train-val-test split.
 ```
-</details>
+
 
 ## Run inference
 
-Modify config files ./configs/model.yaml and ./configs/infer.yaml and input files ./prompts.txt, and then run:
 
+
+### 1. Download the checkpoint
+Run the shell script:
+
+```shell
+./prepare/download_pretrain_model.sh
+```
+
+### 2. Modify the configs
+Modify config files ./configs/model.yaml and ./configs/infer.yaml and input files
+
+
+### 3. Modify the input file ./prompts.txt like:
+
+```sh
+In an intense boxing match, one is continuously punching while the other is defending and counterattacking.
+With fiery passion two dancers entwine in Latin dance sublime.
+Two fencers engage in a thrilling duel, their sabres clashing and sparking as they strive for victory.
+The two are blaming each other and having an intense argument.
+Two good friends jump in the same rhythm to celebrate.
+Two people bow to each other.
+Two people embrace each other.
+...
+```
+
+### 3. Run
 ```shell
 python tools/infer.py
 ```
 The results will be rendered and put in ./results/
+
+
+
+
 
 ## Train
 
@@ -64,8 +91,17 @@ python tools/train.py
 
 ## Evaluation
 
-Modify config files ./configs/model.yaml and ./configs/datasets.yaml, and then run:
+### 1. Download the checkpoint
+Run the shell script:
 
+```shell
+./prepare/download_pretrain_model.sh
+```
+
+### 2. Modify the configs
+Modify config files ./configs/model.yaml and ./configs/datasets.yaml
+
+### 3. Run
 ```shell
 python tools/eval.py
 ```
