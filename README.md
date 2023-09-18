@@ -54,7 +54,7 @@ Run the shell script:
 ```
 
 ### 2. Modify the configs
-Modify config files ./configs/model.yaml and ./configs/infer.yaml and input files
+Modify config files ./configs/model.yaml and ./configs/infer.yaml
 
 
 ### 3. Modify the input file ./prompts.txt like:
