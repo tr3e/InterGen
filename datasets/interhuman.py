@@ -65,7 +65,7 @@ class InterHumanDataset(data.Dataset):
                         continue
                     file_path_person1 = pjoin(root, file)
                     file_path_person2 = pjoin(root.replace("person1", "person2"), file)
-                    text_path = file_path_person1.replace("motions", "annots").replace("person1", "").replace("npy", "txt")
+                    text_path = file_path_person1.replace("motions_processed", "annots").replace("person1", "").replace("npy", "txt")
 
 
                     texts = [item.replace("\n", "") for item in open(text_path, "r").readlines()]

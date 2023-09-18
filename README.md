@@ -3,6 +3,8 @@
 This repository contains the official implementation for the paper: [InterGen: Diffusion-based Multi-human Motion Generation
 under Complex Interactions](https://tr3e.github.io/intergen-page/). Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. 
 
+For more results and details, please visit our [webpage](https://tr3e.github.io/intergen-page/).
+
 <p float="left">
   <img src="./readme/pipeline.png" width="900" />
 </p>
@@ -30,16 +32,15 @@ pip install git+https://github.com/openai/CLIP.git
 <details>
   <summary><b>Text to Motion</b></summary>
 
-Download the data from [InterGen: Diffusion-based Multi-human Motion Generation
-under Complex Interactions](https://tr3e.github.io/intergen-page/). And put them to ./data/.
+Download the data from [webpage](https://tr3e.github.io/intergen-page/). And put them into ./data/.
 
 #### Data Structure
 ```sh
 <DATA-DIR>
 ./annots                //Natural language annotations where each file consisting of three sentences.
-./motions               //Raw motion data standardized as SMPL which is similiar to AMASS
+./motions               //Raw motion data standardized as SMPL which is similiar to AMASS.
 ./motions_processed     //Processed motion data with joint positions and rotations (6D representation) of SMPL 22 joints kinematic structure.
-./split                 //train-val-test split.
+./split                 //Train-val-test split.
 ```
 </details>
 
@@ -69,7 +70,6 @@ Modify config files ./configs/model.yaml and ./configs/datasets.yaml, and then r
 python tools/eval.py
 ```
 
-#### Trajectory control -->
 
 ## Applications
 
@@ -97,8 +97,6 @@ InterHuman is a comprehensive, large-scale 3D human interactive motion dataset e
 
 It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. Due to privacy concerns of performers included in our dataset, we cannot share it publicly. You can request the dataset by [filling in this form](https://forms.gle/CjMrUxwdz6iPcTxf7) for the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
 
-
-## Code comming soon!
 
 
 ## Licenses
