@@ -129,6 +129,8 @@ InterHuman is a comprehensive, large-scale 3D human interactive motion dataset e
   <img src="./readme/interhuman.gif" width="900" />
 </p>
 
+It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. You can access the dataset in our [webpage](https://tr3e.github.io/intergen-page/) with the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
+
 
 ## Citation
 
@@ -142,10 +144,6 @@ If you find our work useful in your research, please cite:
   year={2023}
 }
 ```
-
-
-It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. You can access the dataset in our [webpage](https://tr3e.github.io/intergen-page/) with the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
-
 
 
 ## Licenses
