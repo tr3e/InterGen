@@ -41,6 +41,7 @@ under Complex Interactions](https://tr3e.github.io/intergen-page/). And put them
 ./motions_processed     //Processed motion data with joint positions and rotations (6D representation) of SMPL 22 joints kinematic structure.
 ./split                 //train-val-test split.
 ```
+</details>
 
 ### 3. Run inference
 
