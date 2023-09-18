@@ -70,30 +70,26 @@ Two people embrace each other.
 ...
 ```
 
-### 3. Run
+### 4. Run
 ```shell
 python tools/infer.py
 ```
 The results will be rendered and put in ./results/
 
 
-
-
-
 ## Train
 
-<details>
 
 Modify config files ./configs/model.yaml ./configs/datasets.yaml and ./configs/train.yaml, and then run:
 
 ```shell
 python tools/train.py
 ```
-</details>
+
 
 ## Evaluation
 
-<details>
+
 
 ### 1. Download the checkpoint
 Run the shell script:
@@ -109,7 +105,7 @@ Modify config files ./configs/model.yaml and ./configs/datasets.yaml
 ```shell
 python tools/eval.py
 ```
-</details>
+
 
 ## Applications
 
