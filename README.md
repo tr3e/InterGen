@@ -42,7 +42,7 @@ Download the data from [webpage](https://tr3e.github.io/intergen-page/). And put
 ```
 
 
-## Run inference
+## Demo
 
 
 
@@ -82,20 +82,24 @@ The results will be rendered and put in ./results/
 
 ## Train
 
+<details>
+
 Modify config files ./configs/model.yaml ./configs/datasets.yaml and ./configs/train.yaml, and then run:
 
 ```shell
 python tools/train.py
 ```
-
+</details>
 
 ## Evaluation
+
+<details>
 
 ### 1. Download the checkpoint
 Run the shell script:
 
 ```shell
-./prepare/download_pretrain_model.sh
+./prepare/download_evaluation_model.sh
 ```
 
 ### 2. Modify the configs
@@ -105,7 +109,7 @@ Modify config files ./configs/model.yaml and ./configs/datasets.yaml
 ```shell
 python tools/eval.py
 ```
-
+</details>
 
 ## Applications
 
