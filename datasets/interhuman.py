@@ -139,22 +139,22 @@ class InterHumanDataset(data.Dataset):
         if length > self.max_length:
             idx = random.choice(list(range(0, length - self.max_gt_length, 1)))
             gt_length = self.max_gt_length
-            motion1 = full_motion1[idx:idx + gt_length].copy()
-            motion2 = full_motion2[idx:idx + gt_length].copy()
+            motion1 = full_motion1[idx:idx + gt_length]
+            motion2 = full_motion2[idx:idx + gt_length]
 
         else:
             idx = 0
             gt_length = min(length - idx, self.max_gt_length )
-            motion1 = full_motion1[idx:idx + gt_length].copy()
-            motion2 = full_motion2[idx:idx + gt_length].copy()
+            motion1 = full_motion1[idx:idx + gt_length]
+            motion2 = full_motion2[idx:idx + gt_length]
 
         if np.random.rand() > 0.5:
             motion1, motion2 = motion2, motion1
-        motion1, root_quat_init1, root_pos_init1, global_positions1 = process_motion_np(motion1, 0.001, 0, n_joints=22)
-        motion2, root_quat_init2, root_pos_init2, global_positions2 = process_motion_np(motion2, 0.001, 0, n_joints=22)
+        motion1, root_quat_init1, root_pos_init1 = process_motion_np(motion1, 0.001, 0, n_joints=22)
+        motion2, root_quat_init2, root_pos_init2 = process_motion_np(motion2, 0.001, 0, n_joints=22)
         r_relative = qmul_np(root_quat_init2, qinv_np(root_quat_init1))
         angle = np.arctan2(r_relative[:, 2:3], r_relative[:, 0:1])
-        # print("angle2 ", angle)
+
         xz = qrot_np(root_quat_init1, root_pos_init2 - root_pos_init1)[:, [0, 2]]
         relative = np.concatenate([angle, xz], axis=-1)[0]
         motion2 = rigid_transform(relative, motion2)
@@ -174,7 +174,7 @@ class InterHumanDataset(data.Dataset):
 
         assert len(gt_motion1) == self.max_gt_length
         assert len(gt_motion2) == self.max_gt_length
-        "Z Normalization"
+
         if np.random.rand() > 0.5:
             gt_motion1, gt_motion2 = gt_motion2, gt_motion1
 

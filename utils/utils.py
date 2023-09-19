@@ -172,9 +172,6 @@ def process_motion_np(motion, feet_thre, prev_frames, n_joints):
 
     positions = qrot_np(root_quat_init_for_all, positions)
 
-    '''New ground truth positions'''
-    global_positions = positions.copy()
-
     """ Get Foot Contacts """
 
     def foot_detect(positions, thres):
@@ -200,17 +197,16 @@ def process_motion_np(motion, feet_thre, prev_frames, n_joints):
     rot_data = rotations
 
     '''Get Joint Rotation Invariant Position Represention'''
-    ric_data = positions[:, 1:].reshape(len(positions), -1)
-    gric_data = global_positions.reshape(len(global_positions), -1)
-    global_vel = global_positions[1:] - global_positions[:-1]
-    global_vel = global_vel.reshape(len(global_vel), -1)
+    joint_positions = positions.reshape(len(positions), -1)
+    joint_vels = positions[1:] - positions[:-1]
+    joint_vels = joint_vels.reshape(len(joint_vels), -1)
 
-    data = gric_data[:-1]
-    data = np.concatenate([data, global_vel], axis=-1)
+    data = joint_positions[:-1]
+    data = np.concatenate([data, joint_vels], axis=-1)
     data = np.concatenate([data, rot_data[:-1]], axis=-1)
     data = np.concatenate([data, feet_l, feet_r], axis=-1)
 
-    return data, root_quat_init, root_pose_init_xz[None], global_positions
+    return data, root_quat_init, root_pose_init_xz[None]
 
 
 
