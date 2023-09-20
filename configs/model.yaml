@@ -6,7 +6,7 @@ INPUT_DIM: 262
 LATENT_DIM: 1024
 FF_SIZE: 2048
 ACTIVATION: gelu
-CHECKPOINT: #checkpoints/intergen.ckpt
+CHECKPOINT: checkpoints/intergen.ckpt
 
 DIFFUSION_STEPS: 1000
 BETA_SCHEDULER: cosine
