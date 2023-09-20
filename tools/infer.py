@@ -1,4 +1,5 @@
 import copy
+import os.path
 import sys
 sys.path.append(sys.path[0] + r"/../")
 import torch
@@ -50,6 +51,7 @@ class LitGenModel(L.LightningModule):
 
 
     def generate_one_sample(self, prompt, name):
+        self.model.eval()
         batch = OrderedDict({})
 
         batch["motion_lens"] = torch.zeros(1,1).long().cuda()
@@ -58,6 +60,8 @@ class LitGenModel(L.LightningModule):
         window_size = 210
         motion_output = self.generate_loop(batch, window_size)
         result_path = f"results/{name}.mp4"
+        if not os.path.exists("results"):
+            os.makedirs("results")
 
         self.plot_t2m([motion_output[0], motion_output[1]],
                       result_path,
@@ -118,7 +122,7 @@ if __name__ == '__main__':
     texts = [text.strip("\n") for text in texts]
 
     for text in texts:
-        name = text
+        name = text[:48]
         for i in range(3):
             litmodel.generate_one_sample(text, name+"_"+str(i))
 

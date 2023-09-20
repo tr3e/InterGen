@@ -24,7 +24,6 @@ This code was tested on `Ubuntu 20.04.1 LTS` and requires:
 conda create --name intergen
 conda activate intergen
 pip install -r requirements.txt
-pip install git+https://github.com/openai/CLIP.git
 ```
 
 ### 2. Get data
