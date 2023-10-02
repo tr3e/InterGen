@@ -87,9 +87,9 @@ class LitTrainModel(pl.LightningModule):
             return
         for k, v in outputs['loss_logs'].items():
             if k not in self.logs:
-                self.logs[k] = v
+                self.logs[k] = v.item()
             else:
-                self.logs[k] += v
+                self.logs[k] += v.item()
 
         self.it += 1
         if self.it % self.cfg.TRAIN.LOG_STEPS == 0 and self.device.index == 0:
