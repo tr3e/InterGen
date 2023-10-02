@@ -5,3 +5,4 @@ __pycache__
 venv
 evaluation_*
 cache
+eval_model

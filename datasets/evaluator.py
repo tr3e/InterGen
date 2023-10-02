@@ -98,7 +98,7 @@ def get_dataset_motion_loader(opt, batch_size):
         print('Loading dataset %s ...' % opt.NAME)
 
         dataset = InterHumanDataset(opt)
-        dataloader = DataLoader(dataset, batch_size=batch_size*3, num_workers=0, drop_last=True, shuffle=True)
+        dataloader = DataLoader(dataset, batch_size=batch_size, num_workers=0, drop_last=True, shuffle=True)
     else:
         raise KeyError('Dataset not Recognized !!')
 
@@ -113,7 +113,7 @@ def get_motion_loader(batch_size, model, ground_truth_dataset, device, mm_num_sa
     dataset = EvaluationDataset(model, ground_truth_dataset, device, mm_num_samples=mm_num_samples, mm_num_repeats=mm_num_repeats)
     mm_dataset = MMGeneratedDataset(dataset)
 
-    motion_loader = DataLoader(dataset, batch_size=batch_size*3, drop_last=True, num_workers=0, shuffle=True)
+    motion_loader = DataLoader(dataset, batch_size=batch_size, drop_last=True, num_workers=0, shuffle=True)
     mm_motion_loader = DataLoader(mm_dataset, batch_size=1, num_workers=0)
 
     print('Generated Dataset Loading Completed!!!')
