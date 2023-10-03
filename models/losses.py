@@ -194,7 +194,6 @@ class GeometricLoss(nn.Module):
         self.forward_vel()
         self.forward_bone_length()
         self.forward_contact()
-        self.forward_local_pose()
         self.accum_loss()
         # return self.losses["simple"]
 
