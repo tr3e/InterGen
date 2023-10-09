@@ -54,7 +54,7 @@ class LitTrainModel(pl.LightningModule):
 
         batch = OrderedDict({})
         batch["text"] = text
-        batch["motions"] = motions.reshape(B, T, -1).float()
+        batch["motions"] = motions.reshape(B, T, -1).type(torch.float32)
         batch["motion_lens"] = motion_lens.long()
 
         loss, loss_logs = self.model(batch)
@@ -71,7 +71,6 @@ class LitTrainModel(pl.LightningModule):
 
     def training_step(self, batch, batch_idx):
         loss, loss_logs = self.forward(batch)
-
         opt = self.optimizers()
         opt.zero_grad()
         self.manual_backward(loss)
@@ -137,12 +136,13 @@ if __name__ == '__main__':
     datamodule = DataModule(data_cfg, train_cfg.TRAIN.BATCH_SIZE, train_cfg.TRAIN.NUM_WORKERS)
     model = build_models(model_cfg)
 
+
     if train_cfg.TRAIN.RESUME:
         ckpt = torch.load(train_cfg.TRAIN.RESUME, map_location="cpu")
         for k in list(ckpt["state_dict"].keys()):
             if "model" in k:
                 ckpt["state_dict"][k.replace("model.", "")] = ckpt["state_dict"].pop(k)
-        model.load_state_dict(ckpt["state_dict"], strict=False)
+        model.load_state_dict(ckpt["state_dict"], strict=True)
         print("checkpoint state loaded!")
     litmodel = LitTrainModel(model, train_cfg)
 

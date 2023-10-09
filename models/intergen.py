@@ -10,7 +10,7 @@ class InterGen(nn.Module):
         super().__init__()
         self.cfg = cfg
         self.latent_dim = cfg.LATENT_DIM
-        self.decoder = InterDiffusion(cfg, sampling=cfg.TEST, sampling_strategy=cfg.STRATEGY)
+        self.decoder = InterDiffusion(cfg, sampling_strategy=cfg.STRATEGY)
 
         clip_model, _ = clip.load("ViT-L/14@336px", device="cpu", jit=False)
 

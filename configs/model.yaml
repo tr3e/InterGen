@@ -11,7 +11,6 @@ CHECKPOINT: checkpoints/intergen.ckpt
 DIFFUSION_STEPS: 1000
 BETA_SCHEDULER: cosine
 SAMPLER: uniform
-TEST: True
 
 MOTION_REP: global
 FINETUNE: False

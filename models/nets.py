@@ -148,7 +148,7 @@ class InterDenoiser(nn.Module):
 
 
 class InterDiffusion(nn.Module):
-    def __init__(self, cfg, sampling=False, sampling_strategy="ddim50"):
+    def __init__(self, cfg, sampling_strategy="ddim50"):
         super().__init__()
         self.cfg = cfg
         self.nfeats = cfg.INPUT_DIM
@@ -171,14 +171,12 @@ class InterDiffusion(nn.Module):
 
 
         self.diffusion_steps = self.diffusion_steps
-        betas = get_named_beta_schedule(self.beta_scheduler, self.diffusion_steps)
-        if sampling:
-            timestep_respacing=self.sampling_strategy
-        else:
-            timestep_respacing=[self.diffusion_steps]
+        self.betas = get_named_beta_schedule(self.beta_scheduler, self.diffusion_steps)
+
+        timestep_respacing=[self.diffusion_steps]
         self.diffusion = MotionDiffusion(
             use_timesteps=space_timesteps(self.diffusion_steps, timestep_respacing),
-            betas=betas,
+            betas=self.betas,
             motion_rep=self.motion_rep,
             model_mean_type=ModelMeanType.START_X,
             model_var_type=ModelVarType.FIXED_SMALL,
@@ -239,8 +237,19 @@ class InterDiffusion(nn.Module):
         B = cond.shape[0]
         T = batch["motion_lens"][0]
 
+        timestep_respacing= self.sampling_strategy
+        self.diffusion_test = MotionDiffusion(
+            use_timesteps=space_timesteps(self.diffusion_steps, timestep_respacing),
+            betas=self.betas,
+            motion_rep=self.motion_rep,
+            model_mean_type=ModelMeanType.START_X,
+            model_var_type=ModelVarType.FIXED_SMALL,
+            loss_type=LossType.MSE,
+            rescale_timesteps = False,
+        )
+
         self.cfg_model = ClassifierFreeSampleModel(self.net, self.cfg_weight)
-        output = self.diffusion.ddim_sample_loop(
+        output = self.diffusion_test.ddim_sample_loop(
             self.cfg_model,
             (B, T, self.nfeats*2),
             clip_denoised=False,
