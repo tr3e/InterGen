@@ -90,17 +90,10 @@ python tools/train.py
 
 
 
-### 1. Download the checkpoint
-Run the shell script:
-
-```shell
-./prepare/download_evaluation_model.sh
-```
-
-### 2. Modify the configs
+### 1. Modify the configs
 Modify config files ./configs/model.yaml and ./configs/datasets.yaml
 
-### 3. Run
+### 2. Run
 ```shell
 python tools/eval.py
 ```
