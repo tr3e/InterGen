@@ -129,12 +129,12 @@ It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommo
 If you find our work useful in your research, please cite:
 
 ```
-@article{liang2023intergen,
+[@article{liang2023intergen,
   title={InterGen: Diffusion-based Multi-human Motion Generation under Complex Interactions},
   author={Liang, Han and Zhang, Wenqian and Li, Wenxuan and Yu, Jingyi and Xu, Lan},
   journal={arXiv preprint arXiv:2304.05684},
   year={2023}
-}
+}](https://doi.org/10.1007/s11263-024-02042-6)
 ```
 
 
