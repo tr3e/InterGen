@@ -11,13 +11,11 @@ Our work is capable of simultaneously generating high-quality interactive motion
 
 For more qualitative results, please visit our [webpage](https://tr3e.github.io/intergen-page/).
 
-<!-- <p float="left">
-  <img src="./readme/pipeline.png" width="900" />
-</p> -->
-
 <p float="left">
-  <img src="./readme/trajectorycontrol.gif" width="900" />
+  <img src="./readme/pipeline.png" width="900" />
 </p>
+
+
 <!-- ![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif) -->
 
 <!-- ### Person-to-person generation
@@ -58,21 +56,10 @@ InterHuman is a comprehensive, large-scale 3D human interactive motion dataset e
 
 It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. You can access the dataset in our [webpage](https://tr3e.github.io/intergen-page/) with the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
 
-
-## Citation
-
-If you find our work useful in your research, please consider citing:
-
-```
-@article{liang2024intergen,
-  title={Intergen: Diffusion-based multi-human motion generation under complex interactions},
-  author={Liang, Han and Zhang, Wenqian and Li, Wenxuan and Yu, Jingyi and Xu, Lan},
-  journal={International Journal of Computer Vision},
-  pages={1--21},
-  year={2024},
-  publisher={Springer}
-}
-```
+## Application
+<p float="left">
+  <img src="./readme/trajectorycontrol.gif" width="900" />
+</p>
 
 
 ## Getting started
@@ -164,7 +151,20 @@ python tools/eval.py
 ```
 
 
+## Citation
 
+If you find our work useful in your research, please consider citing:
+
+```
+@article{liang2024intergen,
+  title={Intergen: Diffusion-based multi-human motion generation under complex interactions},
+  author={Liang, Han and Zhang, Wenqian and Li, Wenxuan and Yu, Jingyi and Xu, Lan},
+  journal={International Journal of Computer Vision},
+  pages={1--21},
+  year={2024},
+  publisher={Springer}
+}
+```
 
 
 
