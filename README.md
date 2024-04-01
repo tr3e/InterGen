@@ -1,5 +1,5 @@
 # InterGen: Diffusion-based Multi-human Motion Generation under Complex Interactions
-### [ProjectPage](https://tr3e.github.io/intergen-page/) | [Paper](https://doi.org/10.1007/s11263-024-02042-6)  | [Arxiv](https://arxiv.org/abs/2304.05684)  |  [Dataset](https://drive.google.com/drive/folders/1oyozJ4E7Sqgsr7Q747Na35tWo5CjNYk3?usp=sharing)
+### [ProjectPage](https://tr3e.github.io/intergen-page/) | [Paper](https://doi.org/10.1007/s11263-024-02042-6)  | [Arxiv](https://arxiv.org/abs/2304.05684)  |  [InterHuman Dataset](https://drive.google.com/drive/folders/1oyozJ4E7Sqgsr7Q747Na35tWo5CjNYk3?usp=sharing)
 [Han Liang](https://tr3e.github.io/), Wenqian Zhang, Wenxuan Li, [Jingyi Yu](http://www.yu-jingyi.com/), [Lan Xu](http://www.xu-lan.com/).</br>
 
 
@@ -56,10 +56,6 @@ InterHuman is a comprehensive, large-scale 3D human interactive motion dataset e
 
 It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. You can access the dataset in our [webpage](https://tr3e.github.io/intergen-page/) with the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
 
-## Application
-<p float="left">
-  <img src="./readme/trajectorycontrol.gif" width="900" />
-</p>
 
 
 ## Getting started
@@ -149,6 +145,13 @@ Modify config files ./configs/model.yaml and ./configs/datasets.yaml
 ```shell
 python tools/eval.py
 ```
+
+
+## Application
+<p float="left">
+  <img src="./readme/trajectorycontrol.gif" width="900" />
+</p>
+
 
 
 ## Citation
