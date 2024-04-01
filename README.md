@@ -1,5 +1,5 @@
 # InterGen: Diffusion-based Multi-human Motion Generation under Complex Interactions
-### [ProjectPage](https://chenxin.tech/SportsCap.html) | [Paper](https://doi.org/10.1007/s11263-024-02042-6)  | [Arxiv](https://arxiv.org/abs/2304.05684)  |  [Dataset](https://drive.google.com/drive/folders/1oyozJ4E7Sqgsr7Q747Na35tWo5CjNYk3?usp=sharing)
+### [ProjectPage](https://tr3e.github.io/intergen-page/) | [Paper](https://doi.org/10.1007/s11263-024-02042-6)  | [Arxiv](https://arxiv.org/abs/2304.05684)  |  [Dataset](https://drive.google.com/drive/folders/1oyozJ4E7Sqgsr7Q747Na35tWo5CjNYk3?usp=sharing)
 [Han Liang](https://tr3e.github.io/), Wenqian Zhang, Wenxuan Li, [Jingyi Yu](http://www.yu-jingyi.com/), [Lan Xu](http://www.xu-lan.com/).</br>
 
 
@@ -18,11 +18,8 @@ For more results and details, please visit our [webpage](https://tr3e.github.io/
 
 ## Abstract
 We have recently seen tremendous progress in diffusion advances for generating realistic human motions. Yet, they largely disregard the rich multi-human interactions.
-
 In this paper, we present InterGen, an effective diffusion-based approach that incorporates human-to-human interactions into the motion diffusion process, which enables layman users to customize high-quality two-person interaction motions, with only text guidance.
-
 We first contribute a multimodal dataset, named InterHuman. It consists of about 107M frames for diverse two-person interactions, with accurate skeletal motions and 23,337 natural language descriptions. For the algorithm side, we carefully tailor the motion diffusion model to our two-person interaction setting. Then, we propose a novel representation for motion input in our interaction diffusion model, which explicitly formulates the global relations between the two performers in the world frame. We further introduce two novel regularization terms to encode spatial relations, equipped with a corresponding damping scheme during the training of our interaction diffusion model.
-
 Extensive experiments validate the effectiveness and generalizability of InterGen. Notably, it can generate more diverse and compelling two-person motions than previous methods and enables various downstream applications for human interactions.
 
 
