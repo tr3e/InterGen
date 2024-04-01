@@ -1,13 +1,29 @@
-# InterGen
+# InterGen: Diffusion-based Multi-human Motion Generation under Complex Interactions
+### [ProjectPage](https://chenxin.tech/SportsCap.html) | [Paper](https://doi.org/10.1007/s11263-024-02042-6)  | [Arxiv](https://arxiv.org/abs/2304.05684)  |  [Dataset](https://drive.google.com/drive/folders/1oyozJ4E7Sqgsr7Q747Na35tWo5CjNYk3?usp=sharing)
+[Han Liang](https://tr3e.github.io/), Wenqian Zhang, Wenxuan Li, [Jingyi Yu](http://www.yu-jingyi.com/), [Lan Xu](http://www.xu-lan.com/).</br>
+
+
 
 This repository contains the official implementation for the paper: [InterGen: Diffusion-based Multi-human Motion Generation
-under Complex Interactions](https://tr3e.github.io/intergen-page/). Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. 
+under Complex Interactions (IJCV 2024)](https://doi.org/10.1007/s11263-024-02042-6). 
+
+Our work is capable of simultaneously generating high-quality interactive motions of two people with only text guidance, enabling various downstream tasks including person-to-person generation, inbetweening, trajectory control and so forth. 
 
 For more results and details, please visit our [webpage](https://tr3e.github.io/intergen-page/).
 
 <p float="left">
   <img src="./readme/pipeline.png" width="900" />
 </p>
+
+
+## Abstract
+We have recently seen tremendous progress in diffusion advances for generating realistic human motions. Yet, they largely disregard the rich multi-human interactions.
+
+In this paper, we present InterGen, an effective diffusion-based approach that incorporates human-to-human interactions into the motion diffusion process, which enables layman users to customize high-quality two-person interaction motions, with only text guidance.
+
+We first contribute a multimodal dataset, named InterHuman. It consists of about 107M frames for diverse two-person interactions, with accurate skeletal motions and 23,337 natural language descriptions. For the algorithm side, we carefully tailor the motion diffusion model to our two-person interaction setting. Then, we propose a novel representation for motion input in our interaction diffusion model, which explicitly formulates the global relations between the two performers in the world frame. We further introduce two novel regularization terms to encode spatial relations, equipped with a corresponding damping scheme during the training of our interaction diffusion model.
+
+Extensive experiments validate the effectiveness and generalizability of InterGen. Notably, it can generate more diverse and compelling two-person motions than previous methods and enables various downstream applications for human interactions.
 
 
 ## Getting started
@@ -101,15 +117,28 @@ python tools/eval.py
 
 ## Applications
 
+
 <p float="left">
   <img src="./readme/trajectorycontrol.gif" width="900" />
 </p>
 <!-- ![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif) -->
 
-<!-- #### Person-to-person generation
-![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif)
+<!-- ### Person-to-person generation
 
-#### Inbetweening
+<p float="left">
+  <img src="./readme/a2b.gif" width="900" />
+</p>
+
+<!-- #### Person-to-person generation
+![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif) -->
+<!--
+### Inbetweening
+
+<p float="left">
+  <img src="./readme/inbetweening.gif" width="900" />
+</p> -->
+
+<!-- #### Inbetweening
 ![inbetweening](https://github.com/tr3e/InterGen/blob/main/inbetweening.gif) -->
 
 ## InterHuman Dataset
@@ -126,7 +155,7 @@ It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommo
 
 ## Citation
 
-If you find our work useful in your research, please cite:
+If you find our work useful in your research, please consider citing:
 
 ```
 @article{liang2024intergen,
@@ -143,4 +172,4 @@ If you find our work useful in your research, please cite:
 ## Licenses
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-
+All material is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. You can **use, redistribute, and adapt** the material for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made.
