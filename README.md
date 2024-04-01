@@ -11,9 +11,32 @@ Our work is capable of simultaneously generating high-quality interactive motion
 
 For more qualitative results, please visit our [webpage](https://tr3e.github.io/intergen-page/).
 
-<p float="left">
+<!-- <p float="left">
   <img src="./readme/pipeline.png" width="900" />
+</p> -->
+
+<p float="left">
+  <img src="./readme/trajectorycontrol.gif" width="900" />
 </p>
+<!-- ![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif) -->
+
+<!-- ### Person-to-person generation
+
+<p float="left">
+  <img src="./readme/a2b.gif" width="900" />
+</p>
+
+<!-- #### Person-to-person generation
+![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif) -->
+<!--
+### Inbetweening
+
+<p float="left">
+  <img src="./readme/inbetweening.gif" width="900" />
+</p> -->
+
+<!-- #### Inbetweening
+![inbetweening](https://github.com/tr3e/InterGen/blob/main/inbetweening.gif) -->
 
 
 <!-- ## Abstract
@@ -22,6 +45,34 @@ We have recently seen tremendous progress in diffusion advances for generating r
 In this paper, we present InterGen, an effective diffusion-based approach that incorporates human-to-human interactions into the motion diffusion process, which enables layman users to customize high-quality two-person interaction motions, with only text guidance.
 
 We first contribute a multimodal dataset, named InterHuman. It consists of about 107M frames for diverse two-person interactions, with accurate skeletal motions and 23,337 natural language descriptions. For the algorithm side, we carefully tailor the motion diffusion model to our two-person interaction setting. Then, we propose a novel representation for motion input in our interaction diffusion model, which explicitly formulates the global relations between the two performers in the world frame. We further introduce two novel regularization terms to encode spatial relations, equipped with a corresponding damping scheme during the training of our interaction diffusion model. -->
+
+
+## InterHuman Dataset
+<!-- ![interhuman](https://github.com/tr3e/InterGen/blob/main/interhuman.gif) -->
+
+InterHuman is a comprehensive, large-scale 3D human interactive motion dataset encompassing a diverse range of 3D motions of two interactive people, each accompanied by natural language annotations.
+
+<p float="left">
+  <img src="./readme/interhuman.gif" width="900" />
+</p>
+
+It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. You can access the dataset in our [webpage](https://tr3e.github.io/intergen-page/) with the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
+
+
+## Citation
+
+If you find our work useful in your research, please consider citing:
+
+```
+@article{liang2024intergen,
+  title={Intergen: Diffusion-based multi-human motion generation under complex interactions},
+  author={Liang, Han and Zhang, Wenqian and Li, Wenxuan and Yu, Jingyi and Xu, Lan},
+  journal={International Journal of Computer Vision},
+  pages={1--21},
+  year={2024},
+  publisher={Springer}
+}
+```
 
 
 ## Getting started
@@ -113,58 +164,9 @@ python tools/eval.py
 ```
 
 
-## Applications
 
 
-<p float="left">
-  <img src="./readme/trajectorycontrol.gif" width="900" />
-</p>
-<!-- ![trajectorycontrol](https://github.com/tr3e/InterGen/blob/main/trajectorycontrol.gif) -->
 
-<!-- ### Person-to-person generation
-
-<p float="left">
-  <img src="./readme/a2b.gif" width="900" />
-</p>
-
-<!-- #### Person-to-person generation
-![person-to-person](https://github.com/tr3e/InterGen/blob/main/a2b.gif) -->
-<!--
-### Inbetweening
-
-<p float="left">
-  <img src="./readme/inbetweening.gif" width="900" />
-</p> -->
-
-<!-- #### Inbetweening
-![inbetweening](https://github.com/tr3e/InterGen/blob/main/inbetweening.gif) -->
-
-## InterHuman Dataset
-<!-- ![interhuman](https://github.com/tr3e/InterGen/blob/main/interhuman.gif) -->
-
-InterHuman is a comprehensive, large-scale 3D human interactive motion dataset encompassing a diverse range of 3D motions of two interactive people, each accompanied by natural language annotations.
-
-<p float="left">
-  <img src="./readme/interhuman.gif" width="900" />
-</p>
-
-It is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. You can access the dataset in our [webpage](https://tr3e.github.io/intergen-page/) with the google drive link for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made. The redistribution of the dataset is **prohibited**. 
-
-
-## Citation
-
-If you find our work useful in your research, please consider citing:
-
-```
-@article{liang2024intergen,
-  title={Intergen: Diffusion-based multi-human motion generation under complex interactions},
-  author={Liang, Han and Zhang, Wenqian and Li, Wenxuan and Yu, Jingyi and Xu, Lan},
-  journal={International Journal of Computer Vision},
-  pages={1--21},
-  year={2024},
-  publisher={Springer}
-}
-```
 
 
 ## Licenses
