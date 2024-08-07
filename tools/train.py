@@ -1,5 +1,7 @@
 import sys
 sys.path.append(sys.path[0] + r"/../")
+import os
+import time
 import torch
 import lightning.pytorch as pl
 import torch.optim as optim
@@ -9,6 +11,8 @@ from configs import get_config
 from os.path import join as pjoin
 from torch.utils.tensorboard import SummaryWriter
 from models import *
+import glob
+
 
 os.environ['PL_TORCH_DISTRIBUTED_BACKEND'] = 'nccl'
 from lightning.pytorch.strategies import DDPStrategy
@@ -103,7 +107,6 @@ class LitTrainModel(pl.LightningModule):
                                lr=self.trainer.optimizers[0].param_groups[0]['lr'])
 
 
-
     def on_train_epoch_end(self):
         # pass
         sch = self.lr_schedulers()
@@ -126,6 +129,13 @@ def build_models(cfg):
         model = InterGen(cfg)
     return model
 
+def get_latest_checkpoint(checkpoint_dir):
+    list_of_files = glob.glob(f'{checkpoint_dir}/*.ckpt')  # Get all checkpoint files
+    if not list_of_files:
+        return None  # Return None if no files are found
+    latest_file = max(list_of_files, key=os.path.getctime)  # Get the latest one
+    return latest_file
+
 
 if __name__ == '__main__':
     print(os.getcwd())
@@ -136,6 +146,11 @@ if __name__ == '__main__':
     datamodule = DataModule(data_cfg, train_cfg.TRAIN.BATCH_SIZE, train_cfg.TRAIN.NUM_WORKERS)
     model = build_models(model_cfg)
 
+    if not train_cfg.TRAIN.RESUME:
+        checkpoint_dir = pjoin(train_cfg.GENERAL.CHECKPOINT, train_cfg.GENERAL.EXP_NAME, 'model')
+        latest_checkpoint = get_latest_checkpoint(checkpoint_dir)
+        if latest_checkpoint:
+            train_cfg.TRAIN.RESUME = latest_checkpoint
 
     if train_cfg.TRAIN.RESUME:
         ckpt = torch.load(train_cfg.TRAIN.RESUME, map_location="cpu")
@@ -144,19 +159,24 @@ if __name__ == '__main__':
                 ckpt["state_dict"][k.replace("model.", "")] = ckpt["state_dict"].pop(k)
         model.load_state_dict(ckpt["state_dict"], strict=True)
         print("checkpoint state loaded!")
+        
     litmodel = LitTrainModel(model, train_cfg)
 
-
-    checkpoint_callback = pl.callbacks.ModelCheckpoint(dirpath=litmodel.model_dir,
-                                                       every_n_epochs=train_cfg.TRAIN.SAVE_EPOCH)
+    checkpoint_callback = pl.callbacks.ModelCheckpoint(
+        dirpath=litmodel.model_dir,
+        filename='{epoch}',
+        save_top_k=1,  # Keep the two most recent checkpoints
+        monitor=None,  # Not monitoring any specific metric, always keep the latest
+        every_n_epochs=1  # Save every epoch
+    )
+    
     trainer = pl.Trainer(
         default_root_dir=litmodel.model_dir,
         devices="auto", accelerator='gpu',
         max_epochs=train_cfg.TRAIN.EPOCH,
         strategy=DDPStrategy(find_unused_parameters=True),
         precision=32,
-        callbacks=[checkpoint_callback],
-
+        callbacks=[checkpoint_callback]
     )
 
     trainer.fit(model=litmodel, datamodule=datamodule)

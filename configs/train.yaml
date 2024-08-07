@@ -6,7 +6,7 @@ GENERAL:
 TRAIN:
   LR: 1e-4
   WEIGHT_DECAY: 0.00002
-  BATCH_SIZE: 32
+  BATCH_SIZE: 16 #Reduced batch size from 32 to 16
   EPOCH: 2000
   STEP: 1000000
   LOG_STEPS: 10
